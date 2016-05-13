@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+/*
+ * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+	You may assume that each input would have exactly one solution.
+	
+	Example:
+	Given nums = [2, 7, 11, 15], target = 9,
+	
+	Because nums[0] + nums[1] = 2 + 7 = 9,
+	return [0, 1].
+ * */
+
+public class LeetCode1 {
+public int[] twoSum(int[] nums, int target) {
+       
+	 for(int i=0;i<nums.length-1;i++){
+    	 for(int j=i+1;j<nums.length;j++){
+    		 if(nums[i]+nums[j]==target){
+    			int [] r={i,j};
+    	
+    			 return r;
+    		 }
+    	 }
+    }
+    return null;
+  
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LeetCode1 t=new LeetCode1();
+		int [] nums={1,2,3,4,4,7,9};
+		System.out.println(t.twoSum(nums, 3));
+	}
+
+}
