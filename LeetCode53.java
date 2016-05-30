@@ -7,7 +7,7 @@
 
 public class LeetCode53 {
 	//思路：最小子串的动规问题。
-	//temp存下当前子串和，如果为负数，而下一位为正，则请空temp,存入当前数,重新开始累加。
+	//temp存下当前子串和，如果为负数，则清空temp,存入当前数,重新开始累加。每次最后都比较result是否为当前最大。
 	 public int maxSubArray(int[] nums) {
 		 int result=Integer.MIN_VALUE;
 		 int temp=0;      
