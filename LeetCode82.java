@@ -21,7 +21,7 @@ public class LeetCode82 {
 	}
 		      
 	  public ListNode deleteDuplicates(ListNode head) {
-		  if(head==null||head.next==null)return head;
+		/*  if(head==null||head.next==null)return head;
 		  ListNode p=new ListNode(0);
 		  ListNode q=new ListNode(0);
 		  q=p;
@@ -39,7 +39,25 @@ public class LeetCode82 {
 			  }
 		  }
 		  
-	        return p.next;
+	        return p.next;*/
+		  
+		  ListNode t = new ListNode(0);
+		    t.next = head;
+		 
+		    ListNode p = t;
+		    while(p.next!=null&&p.next.next!=null){
+		        if(p.next.val == p.next.next.val){
+		            int dup = p.next.val;
+		            while(p.next!=null&&p.next.val==dup){
+		                p.next = p.next.next;
+		            }
+		        }else{
+		            p=p.next;
+		        }
+		 
+		    }
+		 
+		    return t.next;
 	    }
 
 
